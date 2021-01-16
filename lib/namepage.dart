@@ -44,7 +44,7 @@ class _FirstRouteState extends State<FirstRoute>
                 child: Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.fromLTRB(30.0, 270.0, 30.0, 0.0),
+                      margin: EdgeInsets.fromLTRB(30.0, 210.0, 30.0, 0.0),
                       alignment: Alignment.center,
                       child: NameForm(), //Text("1 QUESTION",
                       //   style: TextStyle(
@@ -82,6 +82,8 @@ class _NameForm extends State<NameForm> {
   @override
   Widget build(BuildContext context) {
     final halfMediaWidth = MediaQuery.of(context).size.width / 1.5;
+    var list = ["A", "B", "C"];
+    String _category;
     return Form(
       key: _formKey,
       child: Column(
@@ -120,6 +122,76 @@ class _NameForm extends State<NameForm> {
                 }
                 return null;
               },
+              onSaved: (String value) {
+                model.lastName = value;
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 0.0),
+            width: halfMediaWidth,
+            decoration: new BoxDecoration(
+              color: AppColors.white,
+              borderRadius: new BorderRadius.all(new Radius.circular(25.7)),
+            ),
+            child: MyFormField(
+              hintText: "Age",
+              validator: (String value) {
+                if (value.isEmpty) {
+                  return "Enter your age";
+                }
+                return null;
+              },
+              onSaved: (String value) {
+                model.lastName = value;
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 0.0),
+            width: halfMediaWidth,
+            decoration: new BoxDecoration(
+              color: AppColors.white,
+              borderRadius: new BorderRadius.all(new Radius.circular(25.7)),
+            ),
+            child: DropdownButtonFormField(
+              items: list.map((String category) {
+                return new DropdownMenuItem(
+                    value: category,
+                    child: Row(
+                    children: <Widget>[
+                      Icon(Icons.star),
+                Text(category)
+                ]
+                )
+                );
+              }).toList(),
+              onChanged: (newValue) {
+                setState(() => _category = newValue);
+              },
+              value: _category,
+              //hintText: "Gender",
+              // validator: (String value) {
+              //   if (value.isEmpty) {
+              //     return "Enter your gender";
+              //   }
+              //   return null;
+              // },
+              // onSaved: (String value) {
+              //   model.age = value;
+              // },
+              decoration: InputDecoration(
+                  contentPadding: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                  border: InputBorder.none,
+                  hintText: "Gender",
+
+              ),
+              validator: (String value) {
+            if (value.isEmpty) {
+            return "Enter your age";
+            }
+            return null;
+            },
               onSaved: (String value) {
                 model.lastName = value;
               },

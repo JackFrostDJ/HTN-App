@@ -49,11 +49,6 @@ class _SplashScreenState extends State<SplashScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Image.network('https://miro.medium.com/fit/c/262/262/1*_Xs2gxfKN4OY_k3_UFS8tA.png'),
-                          // Image.asset(
-                          //   'https://miro.medium.com/fit/c/262/262/1*_Xs2gxfKN4OY_k3_UFS8tA.png',
-                          //   height: 300,
-                          //   width: 300,
-                          // ),
                           Padding(
                             padding: const EdgeInsets.only(top: 10.0),
                           ),
