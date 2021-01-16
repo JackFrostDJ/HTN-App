@@ -55,7 +55,7 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
               padding: EdgeInsets.fromLTRB(16.0, 270.0, 16.0, 16.0),
               child: Column (
               children: <Widget> [
-              Container(
+             /*  Container(
                 alignment: Alignment.topLeft,
                 child: Text("Get to know you",
                         style: TextStyle(
@@ -63,7 +63,7 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
                           color: AppColors.white,
                         ),
                       ),
-              ),
+              ), */
                       CheckboxListTile(
                         //secondary: const Icons(Icons.alarm),
                         title: const Text('Biking'),
