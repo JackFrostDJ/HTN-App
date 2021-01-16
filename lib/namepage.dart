@@ -28,7 +28,7 @@ class _FirstRouteState extends State<FirstRoute>
     return Scaffold(
       backgroundColor: AppColors.red,
       appBar: AppBar(
-        title: Text("Apptivity"),
+        title: Text("Testing Testing"),
         backgroundColor: AppColors.blue,
       ),
       body: SlideTransition(
