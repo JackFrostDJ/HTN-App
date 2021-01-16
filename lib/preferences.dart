@@ -11,6 +11,23 @@ class SecondRoute extends StatefulWidget{
   _SecondRouteState createState() => _SecondRouteState();
 }
 
+class ThirdRoute extends StatefulWidget{
+  @override
+  _ThirdRouteState createState() => _ThirdRouteState();
+}
+
+final bool valuefirst;
+final bool valuesecond;
+
+class _ThirdRouteState extends State<ThirdRoute> {
+  valuefirst = false;
+  valuesecond = false;
+  @override
+  Widget build(BuildContext context) {
+    return null;
+  }
+}
+
 class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStateMixin {
   @override
   void initState() {
@@ -19,7 +36,7 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
         duration: Duration(milliseconds: 400)
     );
     Timer(Duration(milliseconds: 200), () => _animationController.forward());
-    super.initState();
+    super.initState(); 
   }
 
   @override
@@ -48,6 +65,27 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
                       fontSize: 24,
                       color: AppColors.white,
                     ),
+                  ),
+                  CheckboxListTile(
+                    //secondary: const Icons(Icons.alarm),
+                    title: const Text('Biking'),
+                    subtitle: Text('Active'),
+                    value: valuefirst,
+                    onChanged: (bool value){
+                      setState(() {
+                        valuefirst = value;
+                      });
+                    },
+                  ),
+                  Checkbox(
+                    checkColor: AppColors.blue,
+                    activeColor: AppColors.red,
+                    value: valuesecond,
+                    onChanged: (bool value){
+                      setState((){
+                        valuesecond = value;
+                      });
+                    },
                   ),
                 ),
                 Container(
@@ -80,3 +118,25 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
     super.dispose();
   }
 }
+
+CheckboxListTile(
+                    //secondary: const Icons(Icons.alarm),
+                    title: const Text('Biking'),
+                    subtitle: Text('Active'),
+                    value: valuefirst,
+                    onChanged: (bool value){
+                      setState(() {
+                        valuefirst = value;
+                      });
+                    },
+                  ),
+                  Checkbox(
+                    checkColor: AppColors.blue,
+                    activeColor: AppColors.red,
+                    value: valuesecond,
+                    onChanged: (bool value){
+                      setState((){
+                        valuesecond = value;
+                      });
+                    },
+                  ),
