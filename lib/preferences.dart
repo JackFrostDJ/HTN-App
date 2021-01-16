@@ -11,24 +11,9 @@ class SecondRoute extends StatefulWidget{
   _SecondRouteState createState() => _SecondRouteState();
 }
 
-class ThirdRoute extends StatefulWidget{
-  @override
-  _ThirdRouteState createState() => _ThirdRouteState();
-}
-
-final bool valuefirst;
-final bool valuesecond;
-
-class _ThirdRouteState extends State<ThirdRoute> {
-  valuefirst = false;
-  valuesecond = false;
-  @override
-  Widget build(BuildContext context) {
-    return null;
-  }
-}
-
 class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStateMixin {
+  static bool valuefirst = false;
+  static bool valuesecond = false;
   @override
   void initState() {
     _animationController = AnimationController(
@@ -54,63 +39,62 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
         ).animate(_animationController),
         child: FadeTransition(
           opacity: _animationController,
-          child: Stack(
-            children: [Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(16.0, 270.0, 16.0, 16.0),
-                  alignment: Alignment.center,
-                  child: Text("A question",
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: AppColors.white,
-                    ),
-                  ),
-                  CheckboxListTile(
-                    //secondary: const Icons(Icons.alarm),
-                    title: const Text('Biking'),
-                    subtitle: Text('Active'),
-                    value: valuefirst,
-                    onChanged: (bool value){
-                      setState(() {
-                        valuefirst = value;
-                      });
-                    },
-                  ),
-                  Checkbox(
-                    checkColor: AppColors.blue,
-                    activeColor: AppColors.red,
-                    value: valuesecond,
-                    onChanged: (bool value){
-                      setState((){
-                        valuesecond = value;
-                      });
-                    },
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 24.0),
-                  child: Center(
-                    child: FloatingActionButton.extended(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => FirstRoute()),
-                        );
-                      },
-                      label: Text('Go back!'),
-                      backgroundColor: AppColors.blue,
-                    ),
-                  ),
-                ),
+          child: Stack( 
+            children: <Widget>[
+              Container (
+              padding: EdgeInsets.fromLTRB(16.0, 270.0, 16.0, 16.0),
+              child: Column (
+              children: <Widget> [ Text("A question",
+                        style: TextStyle(
+                          fontSize: 24,
+                          color: AppColors.white,
+                        ),
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Biking'),
+                          subtitle: Text('Active'),
+                        value: valuefirst,
+                        onChanged: (bool value){
+                          setState(() {
+                            valuefirst = value;
+                          });
+                        },
+                      ),
+                      Checkbox(
+                        checkColor: AppColors.blue,
+                        activeColor: AppColors.red,
+                        value: valuesecond,
+                        onChanged: (bool value){
+                          setState((){
+                            valuesecond = value;
+                          });
+                        },
+                      ),
               ],
-            ),
+              ),
+              ),
+                    Container (
+                      padding: const EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 24.0),
+                      child: Center (
+                        child: FloatingActionButton.extended(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => FirstRoute()),
+                            );
+                          },
+                          label: Text('Go back!'),
+                          backgroundColor: AppColors.blue,
+                        ),
+                      ),
+                    ),
             ],
           ),
-        ),
-      ),
-    );
-  }
+          ),
+              ),
+            );
+      }
 
   @override
   void dispose() {
@@ -118,25 +102,3 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
     super.dispose();
   }
 }
-
-CheckboxListTile(
-                    //secondary: const Icons(Icons.alarm),
-                    title: const Text('Biking'),
-                    subtitle: Text('Active'),
-                    value: valuefirst,
-                    onChanged: (bool value){
-                      setState(() {
-                        valuefirst = value;
-                      });
-                    },
-                  ),
-                  Checkbox(
-                    checkColor: AppColors.blue,
-                    activeColor: AppColors.red,
-                    value: valuesecond,
-                    onChanged: (bool value){
-                      setState((){
-                        valuesecond = value;
-                      });
-                    },
-                  ),
