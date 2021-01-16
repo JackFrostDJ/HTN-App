@@ -29,13 +29,12 @@ class MyFormField extends StatelessWidget {
   final bool isEmail;
   final bool isPassword;
 
-  MyFormField({
-    this.hintText,
-    this.onSaved,
-    this.validator,
-  this.isEmail = false,
-  this.isPassword = false
-  });
+  MyFormField(
+      {this.hintText,
+      this.onSaved,
+      this.validator,
+      this.isEmail = false,
+      this.isPassword = false});
 
   @override
   Widget build(BuildContext context) {
