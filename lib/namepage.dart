@@ -136,7 +136,7 @@ class _NameForm extends State<NameForm> {
                     _formKey.currentState.save();
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Result(model: this.model)),
+                      MaterialPageRoute(builder: (context) => SecondRoute()),
                     );
                   }
                 },
