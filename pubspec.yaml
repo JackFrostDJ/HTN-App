@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  splashscreen:
 
   flutter_gallery: ^2.4.0+20400
   validators: ^2.0.0+1

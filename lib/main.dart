@@ -3,6 +3,7 @@ import 'package:hackthenorthapp/AppColors.dart';
 import 'package:validators/validators.dart' as validator;
 import 'model.dart';
 import 'result.dart';
+import 'splashscreen.dart';
 import 'namepage.dart';
 
 void main() {
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Navigation Basics',
-      home: FirstRoute(),
+      title: 'HTN App',
+      home: MySplashScreen(),
     );
   }
 }
