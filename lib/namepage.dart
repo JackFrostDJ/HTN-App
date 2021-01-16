@@ -13,14 +13,12 @@ class FirstRoute extends StatefulWidget {
   _FirstRouteState createState() => _FirstRouteState();
 }
 
-class _FirstRouteState extends State<FirstRoute> with SingleTickerProviderStateMixin{
-
+class _FirstRouteState extends State<FirstRoute>
+    with SingleTickerProviderStateMixin {
   @override
   void initState() {
-    _animationController = AnimationController(
-        vsync: this,
-        duration: Duration(milliseconds: 400)
-    );
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 400));
     Timer(Duration(milliseconds: 200), () => _animationController.forward());
     super.initState();
   }
@@ -30,7 +28,7 @@ class _FirstRouteState extends State<FirstRoute> with SingleTickerProviderStateM
     return Scaffold(
       backgroundColor: AppColors.red,
       appBar: AppBar(
-        title: Text("First Route"),
+        title: Text("Apptivity"),
         backgroundColor: AppColors.blue,
       ),
       body: SlideTransition(
@@ -48,7 +46,7 @@ class _FirstRouteState extends State<FirstRoute> with SingleTickerProviderStateM
                     Container(
                       margin: EdgeInsets.fromLTRB(30.0, 270.0, 30.0, 0.0),
                       alignment: Alignment.center,
-                      child: NameForm(),//Text("1 QUESTION",
+                      child: NameForm(), //Text("1 QUESTION",
                       //   style: TextStyle(
                       //     fontSize: 24,
                       //     color: AppColors.white,
@@ -97,7 +95,7 @@ class _NameForm extends State<NameForm> {
             child: MyFormField(
               hintText: "First Name",
               validator: (String value) {
-                if(value.isEmpty) {
+                if (value.isEmpty) {
                   return "Enter your first name";
                 }
                 return null;
@@ -117,7 +115,7 @@ class _NameForm extends State<NameForm> {
             child: MyFormField(
               hintText: "Last Name",
               validator: (String value) {
-                if(value.isEmpty) {
+                if (value.isEmpty) {
                   return "Enter your last name";
                 }
                 return null;
@@ -132,7 +130,7 @@ class _NameForm extends State<NameForm> {
             child: Center(
               child: FloatingActionButton.extended(
                 onPressed: () {
-                  if(_formKey.currentState.validate()) {
+                  if (_formKey.currentState.validate()) {
                     _formKey.currentState.save();
                     Navigator.push(
                       context,
