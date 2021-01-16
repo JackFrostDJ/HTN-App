@@ -27,10 +27,10 @@ class _FirstRouteState extends State<FirstRoute>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.red,
-      appBar: AppBar(
-        title: Text("Testing Testing"),
-        backgroundColor: AppColors.blue,
-      ),
+      // appBar: AppBar(
+      //  title: Text("Testing Testing"),
+      //   backgroundColor: AppColors.blue,
+      // ),
       body: SlideTransition(
         position: Tween<Offset>(
           begin: Offset(0, 0.25),
@@ -138,7 +138,8 @@ class _NameForm extends State<NameForm> {
                     );
                   }
                 },
-                label: Text('Open route'),
+                  label: Text('Next'),
+                icon: Icon(Icons.arrow_forward_rounded),
                 backgroundColor: AppColors.blue,
               ),
             ),
