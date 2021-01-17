@@ -34,12 +34,12 @@ class _HomeState extends State<Home> {
                         showTitleActions: true,
                         minTime: DateTime(2019, 3, 5),
                         maxTime: DateTime(2200, 6, 7), onChanged: (date) {
-                      print('change $date');
-                    }, onConfirm: (date) {
-                      setState(() {
-                        this.startTime = date;
-                      });
-                    }, currentTime: DateTime.now(), locale: LocaleType.en);
+                          print('change $date');
+                        }, onConfirm: (date) {
+                          setState(() {
+                            this.startTime = date;
+                          });
+                        }, currentTime: DateTime.now(), locale: LocaleType.en);
                   },
                   child: Text(
                     'Event Start Time',
@@ -56,12 +56,12 @@ class _HomeState extends State<Home> {
                         showTitleActions: true,
                         minTime: DateTime(2019, 3, 5),
                         maxTime: DateTime(2200, 6, 7), onChanged: (date) {
-                      print('change $date');
-                    }, onConfirm: (date) {
-                      setState(() {
-                        this.endTime = date;
-                      });
-                    }, currentTime: DateTime.now(), locale: LocaleType.en);
+                          print('change $date');
+                        }, onConfirm: (date) {
+                          setState(() {
+                            this.endTime = date;
+                          });
+                        }, currentTime: DateTime.now(), locale: LocaleType.en);
                   },
                   child: Text(
                     'Event End Time',

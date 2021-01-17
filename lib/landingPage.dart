@@ -26,7 +26,7 @@ class _FirstRouteState extends State<FirstRoute>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.red,
+      backgroundColor: AppColors.amber,
       // appBar: AppBar(
       //  title: Text("Testing Testing"),
       //   backgroundColor: AppColors.blue,
@@ -44,7 +44,7 @@ class _FirstRouteState extends State<FirstRoute>
                 child: Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.fromLTRB(30.0, 150.0, 30.0, 0.0),
+                      margin: EdgeInsets.fromLTRB(30.0, 210.0, 30.0, 0.0),
                       alignment: Alignment.center,
                       child: NameForm(), //Text("1 QUESTION",
                       //   style: TextStyle(
@@ -75,35 +75,42 @@ class NameForm extends StatefulWidget {
   _NameForm createState() => _NameForm();
 }
 
+class Item {
+  const Item(this.name,this.icon);
+  final String name;
+  final Icon icon;
+}
+
 class _NameForm extends State<NameForm> {
   final _formKey = GlobalKey<FormState>();
   Model model = Model();
-
+  String _category;
   @override
   Widget build(BuildContext context) {
     final halfMediaWidth = MediaQuery.of(context).size.width / 1.5;
+    var list = ["Male", "Female", "Other"];
+
+    List<Map> _myJson = [
+      {
+        "id" : "1",
+        "image" : "custom/male_gender.png",
+        "name" : "Male"
+      },
+      {
+        "id" : "2",
+        "image" : "custom/female_gender.png",
+        "name" : "Female"
+      },
+      {
+        "id" : "3",
+        "image" : "custom/other_gender.png",
+        "name" : "Other"
+      },
+    ];
     return Form(
       key: _formKey,
       child: Column(
         children: <Widget>[
-          Container(
-            padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(
-                'Why Don\'t you introduce yourself!',
-                maxLines: 3,
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                    color: Colors.blueGrey[100],
-                    fontWeight: FontWeight.w900,
-                    fontStyle: FontStyle.italic,
-                    fontFamily: 'Open Sans',
-                    fontSize: 30),
-              ),
-            ),
-          ),
           Container(
             width: halfMediaWidth,
             decoration: new BoxDecoration(
@@ -144,6 +151,77 @@ class _NameForm extends State<NameForm> {
             ),
           ),
           Container(
+            margin: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 0.0),
+            width: halfMediaWidth,
+            decoration: new BoxDecoration(
+              color: AppColors.white,
+              borderRadius: new BorderRadius.all(new Radius.circular(25.7)),
+            ),
+            child: MyFormField(
+              hintText: "Age",
+              validator: (String value) {
+                if (value.isEmpty) {
+                  return "Enter your age";
+                }
+                return null;
+              },
+              onSaved: (String value) {
+                model.age = value;
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 0.0),
+            width: halfMediaWidth,
+            decoration: new BoxDecoration(
+              color: AppColors.white,
+              borderRadius: new BorderRadius.all(new Radius.circular(25.7)),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Expanded(
+                  child: DropdownButtonHideUnderline(
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 15, 10, 15),
+                      child: ButtonTheme(
+                        alignedDropdown: true,
+                        child: DropdownButton<String> (
+                          isDense: true,
+                          hint: new Text("Gender"),
+                          value: _category,
+                          onChanged: (String newValue) {
+                            setState(() {
+                              _category = newValue;
+                              model.gender = newValue;
+                            });
+                          },
+                          items: _myJson.map((Map map) {
+                            return new DropdownMenuItem<String>(
+                              value: map["name"].toString(),
+                              child: Row(
+                                children: <Widget>[
+                                  Image.asset(
+                                    map["image"],
+                                    width: 25,
+                                  ),
+                                  Container(
+                                      margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                      child: Text(map["name"])
+                                  ),
+                                ],
+                              ),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
             padding: const EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 24.0),
             child: Center(
               child: FloatingActionButton.extended(
@@ -158,7 +236,7 @@ class _NameForm extends State<NameForm> {
                 },
                 label: Text('Next'),
                 icon: Icon(Icons.arrow_forward_rounded),
-                backgroundColor: AppColors.blue,
+                backgroundColor: AppColors.darkBlue,
               ),
             ),
           ),
