@@ -76,7 +76,7 @@ class NameForm extends StatefulWidget {
 }
 
 class Item {
-  const Item(this.name,this.icon);
+  const Item(this.name, this.icon);
   final String name;
   final Icon icon;
 }
@@ -91,21 +91,9 @@ class _NameForm extends State<NameForm> {
     var list = ["Male", "Female", "Other"];
 
     List<Map> _myJson = [
-      {
-        "id" : "1",
-        "image" : "custom/male_gender.png",
-        "name" : "Male"
-      },
-      {
-        "id" : "2",
-        "image" : "custom/female_gender.png",
-        "name" : "Female"
-      },
-      {
-        "id" : "3",
-        "image" : "custom/other_gender.png",
-        "name" : "Other"
-      },
+      {"id": "1", "image": "custom/male_gender.png", "name": "Male"},
+      {"id": "2", "image": "custom/female_gender.png", "name": "Female"},
+      {"id": "3", "image": "custom/other_gender.png", "name": "Other"},
     ];
     return Form(
       key: _formKey,
@@ -186,7 +174,7 @@ class _NameForm extends State<NameForm> {
                       margin: EdgeInsets.fromLTRB(10, 15, 10, 15),
                       child: ButtonTheme(
                         alignedDropdown: true,
-                        child: DropdownButton<String> (
+                        child: DropdownButton<String>(
                           isDense: true,
                           hint: new Text("Gender"),
                           value: _category,
@@ -207,8 +195,7 @@ class _NameForm extends State<NameForm> {
                                   ),
                                   Container(
                                       margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                                      child: Text(map["name"])
-                                  ),
+                                      child: Text(map["name"])),
                                 ],
                               ),
                             );
