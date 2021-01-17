@@ -34,7 +34,7 @@ class _SecondRouteState extends State<SecondRoute>
     return Scaffold(
       backgroundColor: AppColors.red,
       appBar: AppBar(
-        title: Text("Second Page"),
+        title: Text("Your Preferences"),
         backgroundColor: AppColors.blue,
       ),
       body: SlideTransition(
@@ -52,7 +52,7 @@ class _SecondRouteState extends State<SecondRoute>
                     padding: EdgeInsets.fromLTRB(16.0, 20, 16.0, 16.0),
                     alignment: Alignment.center,
                     child: Text(
-                      "Get to know you",
+                      "Geting to know you",
                       style: TextStyle(
                         fontSize: 24,
                         color: AppColors.white,
