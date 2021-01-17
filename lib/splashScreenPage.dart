@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:hackthenorthapp/landingPage.dart';
+import 'postsplash.dart';
 import 'AppColors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void navigationPage() {
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (BuildContext context) => FirstRoute()));
+        MaterialPageRoute(builder: (BuildContext context) => StarterPage()));
   }
 
   @override
