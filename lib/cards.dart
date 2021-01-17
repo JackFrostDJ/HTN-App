@@ -142,16 +142,18 @@ class MyStatelessWidget extends StatelessWidget {
               ],
             ),
           ),
-          FloatingActionButton.extended(
-            backgroundColor: const Color(0xff03dac6),
-            foregroundColor: Colors.black,
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Calendar()));
-            },
-            icon: Icon(Icons.add),
-            label: Text('Show Me My Calendar'),
-          )
+          Container(
+              margin: const EdgeInsets.only(top: 10.0),
+              child: FloatingActionButton.extended(
+                backgroundColor: AppColors.darkBlue,
+                foregroundColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Calendar()));
+                },
+                icon: Icon(Icons.add),
+                label: Text('Show Me My Calendar'),
+              ))
         ],
       ),
     );

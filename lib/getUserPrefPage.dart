@@ -32,13 +32,12 @@ class _SecondRouteState extends State<SecondRoute>
 
   @override
   Widget build(BuildContext context) {
-    const IconData jigsaw = IconData( 0xe900, fontFamily: "Puzzle");
+    const IconData jigsaw = IconData(0xe900, fontFamily: "Puzzle");
     return Scaffold(
       backgroundColor: AppColors.amber,
       appBar: AppBar(
         title: Text("Choose Your Preferences"),
         backgroundColor: AppColors.darkBlue,
-
       ),
       body: SlideTransition(
         position: Tween<Offset>(
@@ -55,10 +54,11 @@ class _SecondRouteState extends State<SecondRoute>
                     padding: EdgeInsets.fromLTRB(16.0, 20, 16.0, 16.0),
                     alignment: Alignment.center,
                     child: Text(
-                      "Getting to know you",
+                      "Tell Us About Yourself...",
                       style: TextStyle(
-                        fontSize: 24,
-                        color: AppColors.black,
+                        color: AppColors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -154,6 +154,7 @@ class _SecondRouteState extends State<SecondRoute>
                     ),
                   ),
                   Container(
+                    margin: const EdgeInsets.only(top: 20.0),
                     child: Center(
                       child: FloatingActionButton.extended(
                         onPressed: () {

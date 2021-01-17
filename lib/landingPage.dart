@@ -44,7 +44,7 @@ class _FirstRouteState extends State<FirstRoute>
                 child: Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.fromLTRB(30.0, 210.0, 30.0, 0.0),
+                      margin: EdgeInsets.fromLTRB(30.0, 100.0, 30.0, 0.0),
                       alignment: Alignment.center,
                       child: NameForm(), //Text("1 QUESTION",
                       //   style: TextStyle(
@@ -99,6 +99,18 @@ class _NameForm extends State<NameForm> {
       key: _formKey,
       child: Column(
         children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(bottom: 20),
+            alignment: Alignment.center,
+            child: Text(
+              "Tell Us About Yourself...",
+              style: TextStyle(
+                color: AppColors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           Container(
             width: halfMediaWidth,
             decoration: new BoxDecoration(

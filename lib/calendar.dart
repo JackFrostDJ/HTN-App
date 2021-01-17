@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'Calender/CalenderClient.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'AppColors.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -34,12 +35,12 @@ class _HomeState extends State<Home> {
                         showTitleActions: true,
                         minTime: DateTime(2019, 3, 5),
                         maxTime: DateTime(2200, 6, 7), onChanged: (date) {
-                          print('change $date');
-                        }, onConfirm: (date) {
-                          setState(() {
-                            this.startTime = date;
-                          });
-                        }, currentTime: DateTime.now(), locale: LocaleType.en);
+                      print('change $date');
+                    }, onConfirm: (date) {
+                      setState(() {
+                        this.startTime = date;
+                      });
+                    }, currentTime: DateTime.now(), locale: LocaleType.en);
                   },
                   child: Text(
                     'Event Start Time',
@@ -56,12 +57,12 @@ class _HomeState extends State<Home> {
                         showTitleActions: true,
                         minTime: DateTime(2019, 3, 5),
                         maxTime: DateTime(2200, 6, 7), onChanged: (date) {
-                          print('change $date');
-                        }, onConfirm: (date) {
-                          setState(() {
-                            this.endTime = date;
-                          });
-                        }, currentTime: DateTime.now(), locale: LocaleType.en);
+                      print('change $date');
+                    }, onConfirm: (date) {
+                      setState(() {
+                        this.endTime = date;
+                      });
+                    }, currentTime: DateTime.now(), locale: LocaleType.en);
                   },
                   child: Text(
                     'Event End Time',
@@ -77,19 +78,22 @@ class _HomeState extends State<Home> {
               decoration: InputDecoration(hintText: 'Enter Event name'),
             ),
           ),
-          RaisedButton(
-              child: Text(
-                'Insert Event',
-              ),
-              color: Colors.grey,
-              onPressed: () {
-                //log('add event pressed');
-                calendarClient.insert(
-                  _eventName.text,
-                  startTime,
-                  endTime,
-                );
-              }),
+          Container(
+            margin: const EdgeInsets.only(top: 10.0),
+            child: FloatingActionButton.extended(
+                label: Text(
+                  'Insert Event',
+                ),
+                backgroundColor: AppColors.darkBlue,
+                onPressed: () {
+                  //log('add event pressed');
+                  calendarClient.insert(
+                    _eventName.text,
+                    startTime,
+                    endTime,
+                  );
+                }),
+          ),
         ],
       ),
     );
