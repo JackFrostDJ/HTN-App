@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'AppColors.dart';
 
 class Cards extends StatelessWidget {
   static const String _title = 'Suggested Activities';
@@ -8,11 +9,13 @@ class Cards extends StatelessWidget {
     return MaterialApp(
       title: _title,
       home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
+        backgroundColor: AppColors.amber,
+        appBar: AppBar(title: const Text(_title),
+        backgroundColor: AppColors.darkBlue ),
         body: MyStatelessWidget(),
-      ),
+    ),
     );
-  }
+    }
 }
 
 /// This is the stateless widget that the main application instantiates.
