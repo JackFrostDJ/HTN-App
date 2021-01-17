@@ -9,22 +9,23 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(title: Text("Successful"),),
-      body: Container(
-        margin: EdgeInsets.all(10.0),
-        child: Column(
-          children: <Widget>[
-            Text(
-              model.firstName,
-              style: TextStyle(fontSize: 22),
-            ),
-            Text(
-              model.lastName,
-              style: TextStyle(fontSize: 22),
-            )
-          ],
+        appBar: AppBar(
+          title: Text("Successful"),
         ),
-      )
-    );
+        body: Container(
+          margin: EdgeInsets.all(10.0),
+          child: Column(
+            children: <Widget>[
+              Text(
+                model.firstName,
+                style: TextStyle(fontSize: 22),
+              ),
+              Text(
+                model.lastName,
+                style: TextStyle(fontSize: 22),
+              )
+            ],
+          ),
+        ));
   }
 }
