@@ -3,7 +3,7 @@ import 'dart:async';
 import 'AppColors.dart';
 import 'main.dart';
 import 'model.dart';
-import 'preferences.dart';
+import 'getUserPrefPage.dart';
 import 'result.dart';
 
 AnimationController _animationController;
@@ -138,7 +138,7 @@ class _NameForm extends State<NameForm> {
                     );
                   }
                 },
-                  label: Text('Next'),
+                label: Text('Next'),
                 icon: Icon(Icons.arrow_forward_rounded),
                 backgroundColor: AppColors.blue,
               ),

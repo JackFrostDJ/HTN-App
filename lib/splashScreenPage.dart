@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:hackthenorthapp/namepage.dart';
+import 'package:hackthenorthapp/namePage.dart';
 import 'AppColors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -28,7 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => FirstRoute()));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (BuildContext context) => FirstRoute()));
   }
 
   @override
@@ -46,31 +47,32 @@ class _SplashScreenState extends State<SplashScreen> {
                   flex: 7,
                   child: Container(
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Image.network('https://miro.medium.com/fit/c/262/262/1*_Xs2gxfKN4OY_k3_UFS8tA.png'),
-                          // Image.asset(
-                          //   'https://miro.medium.com/fit/c/262/262/1*_Xs2gxfKN4OY_k3_UFS8tA.png',
-                          //   height: 300,
-                          //   width: 300,
-                          // ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
-                          ),
-                        ],
-                      )),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.network(
+                          'https://miro.medium.com/fit/c/262/262/1*_Xs2gxfKN4OY_k3_UFS8tA.png'),
+                      // Image.asset(
+                      //   'https://miro.medium.com/fit/c/262/262/1*_Xs2gxfKN4OY_k3_UFS8tA.png',
+                      //   height: 300,
+                      //   width: 300,
+                      // ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10.0),
+                      ),
+                    ],
+                  )),
                 ),
                 Expanded(
                   child: Column(
                     children: <Widget>[
                       CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(AppColors.red),
+                        valueColor:
+                            AlwaysStoppedAnimation<Color>(AppColors.red),
                       ),
                       Container(
                         height: 10,
                         margin: EdgeInsets.only(bottom: 20.0),
                       ),
-
                     ],
                   ),
                 ),
