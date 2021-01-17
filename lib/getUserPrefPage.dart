@@ -59,80 +59,78 @@ class _SecondRouteState extends State<SecondRoute>
                       ),
                     ),
                   ),
-                    Container(
-                      child: Column(
-                    children: <Widget>[
-                      CheckboxListTile(
-                        //secondary: const Icons(Icons.alarm),
-                        title: const Text('Biking'),
-                        subtitle: Text('Active'),
-                        value: valuefirst,
-                        onChanged: (bool value) {
-                          setState(() {
-                            valuefirst = value;
-                          });
-                        },
-                      ),
-                      CheckboxListTile(
-                        //secondary: const Icons(Icons.alarm),
-                        title: const Text('Kayaking'),
-                        subtitle: Text('Active'),
-                        value: valuesecond,
-                        onChanged: (bool value) {
-                          setState(() {
-                            valuesecond = value;
-                          });
-                        },
-                      ),
-                      CheckboxListTile(
-                        //secondary: const Icons(Icons.alarm),
-                        title: const Text('Painting'),
-                        subtitle: Text('Artistic'),
-                        value: valuethird,
-                        onChanged: (bool value) {
-                          setState(() {
-                            valuethird = value;
-                          });
-                        },
-                      ),
-                      CheckboxListTile(
-                        //secondary: const Icons(Icons.alarm),
-                        title: const Text('Karaoke'),
-                        subtitle: Text('Artistic'),
-                        value: valuefourth,
-                        onChanged: (bool value) {
-                          setState(() {
-                            valuefourth = value;
-                          });
-                        },
-                      ),
-                      CheckboxListTile(
-                        //secondary: const Icons(Icons.alarm),
-                        title: const Text('Completing a Puzzle'),
-                        subtitle: Text('Thought-Provocking'),
-                        value: valuefifth,
-                        onChanged: (bool value) {
-                          setState(() {
-                            valuefifth = value;
-                          });
-                        },
-                      ),
-                      CheckboxListTile(
-                        //secondary: const Icons(Icons.alarm),
-                        title: const Text('Writing a Short Story'),
-                        subtitle: Text('Thought-provocking'),
-                        value: valuesixth,
-                        onChanged: (bool value) {
-                          setState(() {
-                            valuesixth = value;
-                          });
-                        },
-                      ),
-                    ],
-                      ),  
+                  Container(
+                    child: Column(
+                      children: <Widget>[
+                        CheckboxListTile(
+                          //secondary: const Icons(Icons.alarm),
+                          title: const Text('Biking'),
+                          subtitle: Text('Active'),
+                          value: valuefirst,
+                          onChanged: (bool value) {
+                            setState(() {
+                              valuefirst = value;
+                            });
+                          },
+                        ),
+                        CheckboxListTile(
+                          //secondary: const Icons(Icons.alarm),
+                          title: const Text('Kayaking'),
+                          subtitle: Text('Active'),
+                          value: valuesecond,
+                          onChanged: (bool value) {
+                            setState(() {
+                              valuesecond = value;
+                            });
+                          },
+                        ),
+                        CheckboxListTile(
+                          //secondary: const Icons(Icons.alarm),
+                          title: const Text('Painting'),
+                          subtitle: Text('Artistic'),
+                          value: valuethird,
+                          onChanged: (bool value) {
+                            setState(() {
+                              valuethird = value;
+                            });
+                          },
+                        ),
+                        CheckboxListTile(
+                          //secondary: const Icons(Icons.alarm),
+                          title: const Text('Karaoke'),
+                          subtitle: Text('Artistic'),
+                          value: valuefourth,
+                          onChanged: (bool value) {
+                            setState(() {
+                              valuefourth = value;
+                            });
+                          },
+                        ),
+                        CheckboxListTile(
+                          //secondary: const Icons(Icons.alarm),
+                          title: const Text('Completing a Puzzle'),
+                          subtitle: Text('Thought-Provocking'),
+                          value: valuefifth,
+                          onChanged: (bool value) {
+                            setState(() {
+                              valuefifth = value;
+                            });
+                          },
+                        ),
+                        CheckboxListTile(
+                          //secondary: const Icons(Icons.alarm),
+                          title: const Text('Writing a Short Story'),
+                          subtitle: Text('Thought-provocking'),
+                          value: valuesixth,
+                          onChanged: (bool value) {
+                            setState(() {
+                              valuesixth = value;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
                   ),
-                  
-                 
                   Container(
                     child: Center(
                       child: FloatingActionButton.extended(
