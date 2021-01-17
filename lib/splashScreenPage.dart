@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:hackthenorthapp/namePage.dart';
+import 'package:hackthenorthapp/landingPage.dart';
 import 'AppColors.dart';
 
 class SplashScreen extends StatefulWidget {

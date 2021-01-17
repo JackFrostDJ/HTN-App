@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hackthenorthapp/calendarPage.dart';
 import 'dart:async';
 import 'AppColors.dart';
-import 'namePage.dart';
+import 'landingPage.dart';
 import 'main.dart';
 import 'calendarPage.dart';
 
@@ -133,6 +133,7 @@ class _SecondRouteState extends State<SecondRoute>
                     ),
                   ),
                   Container(
+                    margin: new EdgeInsets.only(top: 30),
                     child: Center(
                       child: FloatingActionButton.extended(
                         onPressed: () {
@@ -141,7 +142,7 @@ class _SecondRouteState extends State<SecondRoute>
                             MaterialPageRoute(builder: (context) => Calendar()),
                           );
                         },
-                        label: Text('Go to Calendar!'),
+                        label: Text('Recommend Me Now'),
                         backgroundColor: AppColors.blue,
                       ),
                     ),
