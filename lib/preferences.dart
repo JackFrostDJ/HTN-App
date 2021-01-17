@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackthenorthapp/calendar.dart';
 import 'dart:async';
 import 'AppColors.dart';
 import 'namepage.dart';
@@ -6,18 +7,19 @@ import 'main.dart';
 
 AnimationController _animationController;
 
-class SecondRoute extends StatefulWidget{
+class SecondRoute extends StatefulWidget {
   @override
   _SecondRouteState createState() => _SecondRouteState();
 }
 
-class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStateMixin {
+class _SecondRouteState extends State<SecondRoute>
+    with SingleTickerProviderStateMixin {
+  static bool valuefirst = false;
+  static bool valuesecond = false;
   @override
   void initState() {
-    _animationController = AnimationController(
-        vsync: this,
-        duration: Duration(milliseconds: 400)
-    );
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 400));
     Timer(Duration(milliseconds: 200), () => _animationController.forward());
     super.initState();
   }
@@ -27,7 +29,7 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
     return Scaffold(
       backgroundColor: AppColors.red,
       appBar: AppBar(
-        title: Text("Second Route"),
+        title: Text("Second Page"),
         backgroundColor: AppColors.blue,
       ),
       body: SlideTransition(
@@ -38,35 +40,62 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
         child: FadeTransition(
           opacity: _animationController,
           child: Stack(
-            children: [Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(16.0, 270.0, 16.0, 16.0),
-                  alignment: Alignment.center,
-                  child: Text("A question",
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: AppColors.white,
+            children: [
+              Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.fromLTRB(16.0, 20, 16.0, 16.0),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Get to know you",
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: AppColors.white,
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  padding: const EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 24.0),
-                  child: Center(
-                    child: FloatingActionButton.extended(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => FirstRoute()),
-                        );
-                      },
-                      label: Text('Go back!'),
-                      backgroundColor: AppColors.blue,
+                  Container(
+                      child: Column(
+                    children: <Widget>[
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Biking'),
+                        subtitle: Text('Active'),
+                        value: valuefirst,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefirst = value;
+                          });
+                        },
+                      ),
+                      Checkbox(
+                        checkColor: AppColors.blue,
+                        activeColor: AppColors.red,
+                        value: valuesecond,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuesecond = value;
+                          });
+                        },
+                      ),
+                    ],
+                  )),
+                  Container(
+                    child: Center(
+                      child: FloatingActionButton.extended(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Calendar()),
+                          );
+                        },
+                        label: Text('Go to Calendar!'),
+                        backgroundColor: AppColors.blue,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
             ],
           ),
         ),
