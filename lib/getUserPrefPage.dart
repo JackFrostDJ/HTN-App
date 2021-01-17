@@ -16,6 +16,11 @@ class _SecondRouteState extends State<SecondRoute>
     with SingleTickerProviderStateMixin {
   static bool valuefirst = false;
   static bool valuesecond = false;
+  static bool valuethird = false;
+  static bool valuefourth = false;
+  static bool valuefifth = false;
+  static bool valuesixth = false;
+
   @override
   void initState() {
     _animationController =
@@ -54,7 +59,10 @@ class _SecondRouteState extends State<SecondRoute>
                       ),
                     ),
                   ),
-                  Container(
+                  ListView (
+                    //padding: const EdgeInsets.all(3),
+                    children: <Widget> [
+                    Container(
                       child: Column(
                     children: <Widget>[
                       CheckboxListTile(
@@ -68,9 +76,10 @@ class _SecondRouteState extends State<SecondRoute>
                           });
                         },
                       ),
-                      Checkbox(
-                        checkColor: AppColors.blue,
-                        activeColor: AppColors.red,
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Kayaking'),
+                        subtitle: Text('Active'),
                         value: valuesecond,
                         onChanged: (bool value) {
                           setState(() {
@@ -78,8 +87,56 @@ class _SecondRouteState extends State<SecondRoute>
                           });
                         },
                       ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Painting'),
+                        subtitle: Text('Artistic'),
+                        value: valuethird,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuethird = value;
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Karaoke'),
+                        subtitle: Text('Artistic'),
+                        value: valuefourth,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefourth = value;
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Completing a Puzzle'),
+                        subtitle: Text('Thought-Provocking'),
+                        value: valuefifth,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefifth = value;
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Writing a Short Story'),
+                        subtitle: Text('Thought-provocking'),
+                        value: valuesixth,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuesixth = value;
+                          });
+                        },
+                      ),
                     ],
-                  )),
+                      ),  
+                  ),
+                  ],
+                  ),
+                 
                   Container(
                     child: Center(
                       child: FloatingActionButton.extended(
