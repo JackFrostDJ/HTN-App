@@ -20,6 +20,7 @@ class _SecondRouteState extends State<SecondRoute>
   static bool valuefourth = false;
   static bool valuefifth = false;
   static bool valuesixth = false;
+
   @override
   void initState() {
     _animationController =
@@ -59,7 +60,7 @@ class _SecondRouteState extends State<SecondRoute>
                     ),
                   ),
                   ListView (
-                    padding: const EdgeInsets.all(3),
+                    //padding: const EdgeInsets.all(3),
                     children: <Widget> [
                     Container(
                       child: Column(
@@ -135,6 +136,7 @@ class _SecondRouteState extends State<SecondRoute>
                   ),
                   ],
                   ),
+                 
                   Container(
                     child: Center(
                       child: FloatingActionButton.extended(

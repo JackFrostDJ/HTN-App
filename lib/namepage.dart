@@ -13,14 +13,12 @@ class FirstRoute extends StatefulWidget {
   _FirstRouteState createState() => _FirstRouteState();
 }
 
-class _FirstRouteState extends State<FirstRoute> with SingleTickerProviderStateMixin{
-
+class _FirstRouteState extends State<FirstRoute>
+    with SingleTickerProviderStateMixin {
   @override
   void initState() {
-    _animationController = AnimationController(
-        vsync: this,
-        duration: Duration(milliseconds: 400)
-    );
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 400));
     Timer(Duration(milliseconds: 200), () => _animationController.forward());
     super.initState();
   }
@@ -29,10 +27,10 @@ class _FirstRouteState extends State<FirstRoute> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.red,
-      appBar: AppBar(
-        title: Text("First Route"),
-        backgroundColor: AppColors.blue,
-      ),
+      // appBar: AppBar(
+      //  title: Text("Testing Testing"),
+      //   backgroundColor: AppColors.blue,
+      // ),
       body: SlideTransition(
         position: Tween<Offset>(
           begin: Offset(0, 0.25),
@@ -48,7 +46,7 @@ class _FirstRouteState extends State<FirstRoute> with SingleTickerProviderStateM
                     Container(
                       margin: EdgeInsets.fromLTRB(30.0, 270.0, 30.0, 0.0),
                       alignment: Alignment.center,
-                      child: NameForm(),//Text("1 QUESTION",
+                      child: NameForm(), //Text("1 QUESTION",
                       //   style: TextStyle(
                       //     fontSize: 24,
                       //     color: AppColors.white,
@@ -97,7 +95,7 @@ class _NameForm extends State<NameForm> {
             child: MyFormField(
               hintText: "First Name",
               validator: (String value) {
-                if(value.isEmpty) {
+                if (value.isEmpty) {
                   return "Enter your first name";
                 }
                 return null;
@@ -117,7 +115,7 @@ class _NameForm extends State<NameForm> {
             child: MyFormField(
               hintText: "Last Name",
               validator: (String value) {
-                if(value.isEmpty) {
+                if (value.isEmpty) {
                   return "Enter your last name";
                 }
                 return null;
@@ -132,7 +130,7 @@ class _NameForm extends State<NameForm> {
             child: Center(
               child: FloatingActionButton.extended(
                 onPressed: () {
-                  if(_formKey.currentState.validate()) {
+                  if (_formKey.currentState.validate()) {
                     _formKey.currentState.save();
                     Navigator.push(
                       context,
@@ -140,7 +138,8 @@ class _NameForm extends State<NameForm> {
                     );
                   }
                 },
-                label: Text('Open route'),
+                  label: Text('Next'),
+                icon: Icon(Icons.arrow_forward_rounded),
                 backgroundColor: AppColors.blue,
               ),
             ),
