@@ -36,19 +36,21 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
         position: Tween<Offset>(
           begin: Offset(0, 0.25),
           end: Offset.zero,
-        ).animate(_animationController)),
+        ).animate(_animationController),
+      ),
+    );
         children: <Widget> [ Container (
               alignment: Alignment.topLeft,
-              child: Container (
-                Text ("Get to know you",
+              child: Text ("Get to know you",
                   style: TextStyle(
                   fontSize: 24,
                   color: AppColors.white, )
-                        ),
-                      ),
-              )],
+                ),
+        ),
+        ];
         child: FadeTransition(
           opacity: _animationController,
+        );
           child: Stack( 
             children: <Widget>[
               Container (
@@ -104,9 +106,8 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
                       ),
                     ),
             ],
-          ),
-          ),
-              );
+          );
+        
       }
 
   @override
