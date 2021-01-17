@@ -4,7 +4,7 @@ import 'package:validators/validators.dart' as validator;
 import 'model.dart';
 import 'result.dart';
 import 'splashScreenPage.dart';
-import 'namePage.dart';
+import 'landingPage.dart';
 
 void main() {
   runApp(MyApp());
