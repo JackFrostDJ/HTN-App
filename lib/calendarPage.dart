@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
+import 'calendar.dart';
 
 class Calendar extends StatelessWidget {
   // This widget is the root of your application.
@@ -21,7 +22,10 @@ class Calendar extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            // Add your onPressed code here!
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
           },
           label: Text('Approve'),
           icon: Icon(Icons.thumb_up),

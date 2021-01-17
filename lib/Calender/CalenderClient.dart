@@ -9,7 +9,9 @@ class CalendarClient {
   static const _scopes = const [CalendarApi.CalendarScope];
 
   insert(title, startTime, endTime) {
-    var _clientID = new ClientId("YOUR_CLIENT_ID", "");
+    var _clientID = new ClientId(
+        "331002031390-7ti98076oiscps8qtnv4mn1nmos5d84l.apps.googleusercontent.com",
+        "");
     clientViaUserConsent(_clientID, _scopes, prompt).then((AuthClient client) {
       var calendar = CalendarApi(client);
       calendar.calendarList.list().then((value) => print("VAL________$value"));
