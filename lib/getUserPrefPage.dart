@@ -4,6 +4,7 @@ import 'dart:async';
 import 'AppColors.dart';
 import 'namePage.dart';
 import 'main.dart';
+import 'cards.dart';
 
 AnimationController _animationController;
 
@@ -137,7 +138,7 @@ class _SecondRouteState extends State<SecondRoute>
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Calendar()),
+                            MaterialPageRoute(builder: (context) => Cards()),
                           );
                         },
                         label: Text('Go to Calendar!'),
