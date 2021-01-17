@@ -77,6 +77,7 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
                           });
                         },
                       ),
+<<<<<<< Updated upstream
                       Checkbox(
                         checkColor: AppColors.blue,
                         activeColor: AppColors.red,
@@ -84,6 +85,93 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
                         onChanged: (bool value){
                           setState((){
                             valuesecond = value;
+=======
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Hiking'),
+                        subtitle: Text('Active'),
+                        value: valuefirst,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefirst = value;
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Kayaking'),
+                        subtitle: Text('Active'),
+                        value: valuefirst,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefirst = value;
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Sculpting'),
+                        subtitle: Text('Artistic'),
+                        value: valuefirst,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefirst = value;
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Painting'),
+                        subtitle: Text('Artistic'),
+                        value: valuefirst,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefirst = value;
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Bake and Decorate a Cake'),
+                        subtitle: Text('Artistic'),
+                        value: valuefirst,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefirst = value;
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Puzzle'),
+                        subtitle: Text('Thought-provoking'),
+                        value: valuefirst,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefirst = value;
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Write a Short Story'),
+                        subtitle: Text('Thought-provoking'),
+                        value: valuefirst,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefirst = value;
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        //secondary: const Icons(Icons.alarm),
+                        title: const Text('Watch a Movie'),
+                        subtitle: Text('Thought-provoking'),
+                        value: valuefirst,
+                        onChanged: (bool value) {
+                          setState(() {
+                            valuefirst = value;
+>>>>>>> Stashed changes
                           });
                         },
                       ),
