@@ -150,7 +150,7 @@ class MyStatelessWidget extends StatelessWidget {
                   context, MaterialPageRoute(builder: (context) => Calendar()));
             },
             icon: Icon(Icons.add),
-            label: Text('EXTENDED'),
+            label: Text('Show Me My Calendar'),
           )
         ],
       ),
