@@ -32,6 +32,7 @@ class _SecondRouteState extends State<SecondRoute>
 
   @override
   Widget build(BuildContext context) {
+    const IconData jigsaw = IconData( 0xe900, fontFamily: "Puzzle");
     return Scaffold(
       backgroundColor: AppColors.amber,
       appBar: AppBar(
@@ -76,12 +77,13 @@ class _SecondRouteState extends State<SecondRoute>
                                 valuefirst = value;
                               });
                             },
+                            secondary: const Icon(Icons.pedal_bike),
                           ),
                         ),
                         Container(
                           color: Colors.white,
                           child: CheckboxListTile(
-                            //secondary: const Icons(Icons.alarm),
+                            secondary: const Icon(Icons.waves_rounded),
                             title: const Text('Kayaking'),
                             subtitle: Text('Active'),
                             value: valuesecond,
@@ -95,7 +97,7 @@ class _SecondRouteState extends State<SecondRoute>
                         Container(
                           color: Colors.white,
                           child: CheckboxListTile(
-                            //secondary: const Icons(Icons.alarm),
+                            secondary: const Icon(Icons.brush),
                             title: const Text('Painting'),
                             subtitle: Text('Artistic'),
                             value: valuethird,
@@ -109,7 +111,7 @@ class _SecondRouteState extends State<SecondRoute>
                         Container(
                           color: Colors.white,
                           child: CheckboxListTile(
-                            //secondary: const Icons(Icons.alarm),
+                            secondary: const Icon(Icons.mic_external_on),
                             title: const Text('Karaoke'),
                             subtitle: Text('Artistic'),
                             value: valuefourth,
@@ -123,9 +125,9 @@ class _SecondRouteState extends State<SecondRoute>
                         Container(
                           color: Colors.white,
                           child: CheckboxListTile(
-                            //secondary: const Icons(Icons.alarm),
+                            secondary: const Icon(jigsaw),
                             title: const Text('Completing a Puzzle'),
-                            subtitle: Text('Thought-Provocking'),
+                            subtitle: Text('Thought-Provoking'),
                             value: valuefifth,
                             onChanged: (bool value) {
                               setState(() {
@@ -137,8 +139,9 @@ class _SecondRouteState extends State<SecondRoute>
                         Container(
                           color: Colors.white,
                           child: CheckboxListTile(
+                            secondary: const Icon(Icons.book_outlined),
                             title: const Text('Writing a Short Story'),
-                            subtitle: Text('Thought-provocking'),
+                            subtitle: Text('Thought-Provoking'),
                             value: valuesixth,
                             onChanged: (bool value) {
                               setState(() {

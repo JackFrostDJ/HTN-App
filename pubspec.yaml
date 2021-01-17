@@ -63,6 +63,12 @@ flutter:
     - custom/female_gender.png
     - custom/other_gender.png
     - custom/SplashScreen.gif
+    - custom/QuaranTimeLogo.gif
+
+  fonts:
+    - family: "Puzzle"
+      fonts:
+        - asset: custom/jigsaw.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
