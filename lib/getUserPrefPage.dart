@@ -4,7 +4,7 @@ import 'dart:async';
 import 'AppColors.dart';
 import 'landingPage.dart';
 import 'main.dart';
-import 'calendarPage.dart';
+import 'Cards.dart';
 
 AnimationController _animationController;
 
@@ -139,7 +139,7 @@ class _SecondRouteState extends State<SecondRoute>
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Calendar()),
+                            MaterialPageRoute(builder: (context) => Cards()),
                           );
                         },
                         label: Text('Recommend Me Now'),
