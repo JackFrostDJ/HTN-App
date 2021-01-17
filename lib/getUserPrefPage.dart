@@ -59,9 +59,6 @@ class _SecondRouteState extends State<SecondRoute>
                       ),
                     ),
                   ),
-                  ListView (
-                    //padding: const EdgeInsets.all(3),
-                    children: <Widget> [
                     Container(
                       child: Column(
                     children: <Widget>[
@@ -134,8 +131,7 @@ class _SecondRouteState extends State<SecondRoute>
                     ],
                       ),  
                   ),
-                  ],
-                  ),
+                  
                  
                   Container(
                     child: Center(
