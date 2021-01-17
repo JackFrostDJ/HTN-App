@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
-import 'AppColors.dart';
 
 class Calendar extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final halfMediaHeight = MediaQuery.of(context).size.height / 15;
     return MaterialApp(
       title: 'Our Initial Calendar',
       home: Scaffold(
-        body: Container(
-          margin: EdgeInsets.only(top: halfMediaHeight),
-          child: SfCalendar(
-            view: CalendarView.week,
-            todayHighlightColor: Colors.red,
-            cellBorderColor: Colors.blue,
-            showNavigationArrow: true,
-          ),
+        body: SfCalendar(
+          view: CalendarView.week,
+          todayHighlightColor: Colors.red,
+          cellBorderColor: Colors.blue,
+          showNavigationArrow: true,
         ),
       ),
     );

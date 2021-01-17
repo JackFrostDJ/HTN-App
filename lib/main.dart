@@ -3,8 +3,8 @@ import 'package:hackthenorthapp/AppColors.dart';
 import 'package:validators/validators.dart' as validator;
 import 'model.dart';
 import 'result.dart';
-import 'splashscreen.dart';
-import 'namepage.dart';
+import 'splashScreenPage.dart';
+import 'landingPage.dart';
 
 void main() {
   runApp(MyApp());
