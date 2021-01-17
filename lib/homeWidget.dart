@@ -1,5 +1,4 @@
 /// Flutter code sample for BottomNavigationBar
-
 // This example shows a [BottomNavigationBar] as it is used within a [Scaffold]
 // widget. The [BottomNavigationBar] has three [BottomNavigationBarItem]
 // widgets and the [currentIndex] is set to index 0. The selected item is
@@ -38,7 +37,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Home',
