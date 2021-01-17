@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Model {
   String firstName;
   String lastName;
-  int age;
+  String age;
   String gender;
 
   Model({

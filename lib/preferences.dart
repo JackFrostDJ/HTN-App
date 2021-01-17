@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackthenorthapp/calendar.dart';
 import 'dart:async';
 import 'AppColors.dart';
 import 'namepage.dart';
@@ -26,10 +27,10 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.red,
-      appBar: AppBar(
-        title: Text("Second Route"),
-        backgroundColor: AppColors.blue,
-      ),
+      // appBar: AppBar(
+      //   title: Text("Second Route"),
+      //   backgroundColor: AppColors.blue,
+      // ),
       body: SlideTransition(
         position: Tween<Offset>(
           begin: Offset(0, 0.25),
@@ -57,10 +58,11 @@ class _SecondRouteState extends State<SecondRoute> with SingleTickerProviderStat
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => FirstRoute()),
+                          MaterialPageRoute(builder: (context) => Calendar()),
                         );
                       },
-                      label: Text('Go back!'),
+                      label: Text('Next'),
+                      icon: Icon(Icons.arrow_forward_rounded),
                       backgroundColor: AppColors.blue,
                     ),
                   ),

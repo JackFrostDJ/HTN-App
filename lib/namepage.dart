@@ -75,15 +75,38 @@ class NameForm extends StatefulWidget {
   _NameForm createState() => _NameForm();
 }
 
+class Item {
+  const Item(this.name,this.icon);
+  final String name;
+  final Icon icon;
+}
+
 class _NameForm extends State<NameForm> {
   final _formKey = GlobalKey<FormState>();
   Model model = Model();
-
+  String _category;
   @override
   Widget build(BuildContext context) {
     final halfMediaWidth = MediaQuery.of(context).size.width / 1.5;
-    var list = ["A", "B", "C"];
-    String _category;
+    var list = ["Male", "Female", "Other"];
+
+    List<Map> _myJson = [
+      {
+        "id" : "1",
+        "image" : "custom/male_gender.png",
+        "name" : "Male"
+      },
+      {
+        "id" : "2",
+        "image" : "custom/female_gender.png",
+        "name" : "Female"
+      },
+      {
+        "id" : "3",
+        "image" : "custom/other_gender.png",
+        "name" : "Other"
+      },
+    ];
     return Form(
       key: _formKey,
       child: Column(
@@ -143,7 +166,7 @@ class _NameForm extends State<NameForm> {
                 return null;
               },
               onSaved: (String value) {
-                model.lastName = value;
+                model.age = value;
               },
             ),
           ),
@@ -154,47 +177,48 @@ class _NameForm extends State<NameForm> {
               color: AppColors.white,
               borderRadius: new BorderRadius.all(new Radius.circular(25.7)),
             ),
-            child: DropdownButtonFormField(
-              items: list.map((String category) {
-                return new DropdownMenuItem(
-                    value: category,
-                    child: Row(
-                    children: <Widget>[
-                      Icon(Icons.star),
-                Text(category)
-                ]
-                )
-                );
-              }).toList(),
-              onChanged: (newValue) {
-                setState(() => _category = newValue);
-              },
-              value: _category,
-              //hintText: "Gender",
-              // validator: (String value) {
-              //   if (value.isEmpty) {
-              //     return "Enter your gender";
-              //   }
-              //   return null;
-              // },
-              // onSaved: (String value) {
-              //   model.age = value;
-              // },
-              decoration: InputDecoration(
-                  contentPadding: EdgeInsets.fromLTRB(15, 15, 15, 15),
-                  border: InputBorder.none,
-                  hintText: "Gender",
-
-              ),
-              validator: (String value) {
-            if (value.isEmpty) {
-            return "Enter your age";
-            }
-            return null;
-            },
-              onSaved: (String value) {
-                model.lastName = value;
-              },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Expanded(
+                      child: DropdownButtonHideUnderline(
+                        child: Container(
+                          margin: EdgeInsets.fromLTRB(10, 15, 10, 15),
+                          child: ButtonTheme(
+                            alignedDropdown: true,
+                            child: DropdownButton<String> (
+                              isDense: true,
+                              hint: new Text("Gender"),
+                              value: _category,
+                              onChanged: (String newValue) {
+                                setState(() {
+                                  _category = newValue;
+                                  model.gender = newValue;
+                                });
+                              },
+                              items: _myJson.map((Map map) {
+                                return new DropdownMenuItem<String>(
+                                    value: map["name"].toString(),
+                                    child: Row(
+                                      children: <Widget>[
+                                        Image.asset(
+                                          map["image"],
+                                          width: 25,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                          child: Text(map["name"])
+                                        ),
+                                      ],
+                                    ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                        ),
+                      ),
+                  ),
+                ],
             ),
           ),
           Container(
