@@ -28,13 +28,14 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => FirstRoute()));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (BuildContext context) => FirstRoute()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.blue,
+      backgroundColor: AppColors.amber,
       body: InkWell(
         child: Stack(
           fit: StackFit.expand,
@@ -45,32 +46,23 @@ class _SplashScreenState extends State<SplashScreen> {
                 Expanded(
                   flex: 7,
                   child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Image.network('https://miro.medium.com/fit/c/262/262/1*_Xs2gxfKN4OY_k3_UFS8tA.png'),
-                          // Image.asset(
-                          //   'https://miro.medium.com/fit/c/262/262/1*_Xs2gxfKN4OY_k3_UFS8tA.png',
-                          //   height: 300,
-                          //   width: 300,
-                          // ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
-                          ),
-                        ],
-                      )),
+                      child: FittedBox(
+                        child: Image.asset('custom/SplashScreen.gif'),
+                        fit: BoxFit.fill,
+                      )
+                      ),
                 ),
                 Expanded(
                   child: Column(
                     children: <Widget>[
                       CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(AppColors.red),
+                        valueColor:
+                        AlwaysStoppedAnimation<Color>(AppColors.darkBlue),
                       ),
                       Container(
                         height: 10,
                         margin: EdgeInsets.only(bottom: 20.0),
                       ),
-
                     ],
                   ),
                 ),

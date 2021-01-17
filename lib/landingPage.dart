@@ -26,7 +26,7 @@ class _FirstRouteState extends State<FirstRoute>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.red,
+      backgroundColor: AppColors.amber,
       // appBar: AppBar(
       //  title: Text("Testing Testing"),
       //   backgroundColor: AppColors.blue,
@@ -236,7 +236,7 @@ class _NameForm extends State<NameForm> {
                 },
                 label: Text('Next'),
                 icon: Icon(Icons.arrow_forward_rounded),
-                backgroundColor: AppColors.blue,
+                backgroundColor: AppColors.darkBlue,
               ),
             ),
           ),
