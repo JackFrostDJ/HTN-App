@@ -1,41 +1,84 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:splashscreen/splashscreen.dart';
-import 'namepage.dart';
+import 'package:hackthenorthapp/namepage.dart';
 import 'AppColors.dart';
 
-class MySplashScreen extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
+  final Color backgroundColor = Colors.white;
+  final TextStyle styleTextUnderTheLoader = TextStyle(
+      fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black);
+
   @override
-  _MySplashScreenState createState() => new _MySplashScreenState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _MySplashScreenState extends State<MySplashScreen> {
+class _SplashScreenState extends State<SplashScreen> {
+  final splashDelay = 5;
+
   @override
-  Widget build(BuildContext context) {
-    return new SplashScreen(
-        seconds: 14,
-        navigateAfterSeconds: new AfterSplash(),
-        title: new Text('Welcome to [APP_NAME]',
-          style: new TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0
-          ),),
-        image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
-        backgroundColor: AppColors.blue,
-        styleTextUnderTheLoader: new TextStyle(),
-        photoSize: 100.0,
-        onClick: ()=>print("Flutter Egypt"),
-        loaderColor: Colors.red
-    );
+  void initState() {
+    super.initState();
+
+    _loadWidget();
   }
-}
 
-class AfterSplash extends StatelessWidget {
+  _loadWidget() async {
+    var _duration = Duration(seconds: splashDelay);
+    return Timer(_duration, navigationPage);
+  }
+
+  void navigationPage() {
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => FirstRoute()));
+  }
+
   @override
   Widget build(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => FirstRoute()),
+    return Scaffold(
+      backgroundColor: AppColors.blue,
+      body: InkWell(
+        child: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Expanded(
+                  flex: 7,
+                  child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Image.network('https://miro.medium.com/fit/c/262/262/1*_Xs2gxfKN4OY_k3_UFS8tA.png'),
+                          // Image.asset(
+                          //   'https://miro.medium.com/fit/c/262/262/1*_Xs2gxfKN4OY_k3_UFS8tA.png',
+                          //   height: 300,
+                          //   width: 300,
+                          // ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10.0),
+                          ),
+                        ],
+                      )),
+                ),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(AppColors.red),
+                      ),
+                      Container(
+                        height: 10,
+                        margin: EdgeInsets.only(bottom: 20.0),
+                      ),
+
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
-    return null;
   }
 }
