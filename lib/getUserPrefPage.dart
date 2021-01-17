@@ -37,6 +37,7 @@ class _SecondRouteState extends State<SecondRoute>
       appBar: AppBar(
         title: Text("Choose Your Preferences"),
         backgroundColor: AppColors.darkBlue,
+
       ),
       body: SlideTransition(
         position: Tween<Offset>(
