@@ -8,8 +8,6 @@ import 'suggestionPart.dart';
 
 AnimationController _animationController;
 
-/* class MyStatefulWidget extense StatefulWidget {
-
 class SecondRoute extends StatefulWidget {
   SecondRoute({Key key}) : super(key:key);
 
